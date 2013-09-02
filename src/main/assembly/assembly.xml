@@ -2,26 +2,42 @@
     <!-- TODO: a jarjar format would be better -->
     <id>jar-with-dependencies</id>
     <formats>
-        <format>jar</format>
+        <!--<format>jar</format>-->
         <format>zip</format>
     </formats>
     <includeBaseDirectory>false</includeBaseDirectory>
     <dependencySets>
         <dependencySet>
-            <outputDirectory></outputDirectory>
-            <outputFileNameMapping></outputFileNameMapping>
+            <outputDirectory>/lib</outputDirectory>
+            <!--<outputFileNameMapping></outputFileNameMapping>-->
             <unpack>true</unpack>
             <scope>runtime</scope>
         </dependencySet>
     </dependencySets>
     <fileSets>
+        <!--<fileSet>-->
+            <!--<directory>target/classes</directory>-->
+            <!--<outputDirectory></outputDirectory>-->
+        <!--</fileSet>-->
+        <!--<fileSet>-->
+            <!--<directory>${project.basedir}/src</directory>-->
+            <!--<useDefaultExcludes>true</useDefaultExcludes>-->
+        <!--</fileSet>-->
+
         <fileSet>
-            <directory>target/classes</directory>
-            <outputDirectory></outputDirectory>
+            <directory>target</directory>
+            <outputDirectory>/lib</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
         </fileSet>
         <fileSet>
-            <directory>${project.basedir}/src</directory>
-            <useDefaultExcludes>true</useDefaultExcludes>
+            <directory>src/main/assembly/scripts</directory>
+            <outputDirectory>/scripts</outputDirectory>
+            <includes>
+                <include>*.bat</include>
+            </includes>
         </fileSet>
+
     </fileSets>
 </assembly>

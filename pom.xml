@@ -40,6 +40,15 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>${project.build.sourceDirectory}/../assembly/scripts</directory>
+                <includes>
+                    <include>run.bat</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
     
 </project>
