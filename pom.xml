@@ -29,9 +29,9 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
+                    <descriptors>
+                        <descriptor>src/main/assembly/assembly.xml</descriptor>
+                    </descriptors>
                     <archive>
                         <manifest>
                             <mainClass>com.tsupryk.springsample.app.SpringSample</mainClass>
